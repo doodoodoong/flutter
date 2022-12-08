@@ -12,14 +12,29 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Flutter My Appbar'),
+          title: const Text('Flutter My Appbar'),
         ),
-        body: Column(
+        body: Wrap(
+          spacing: 10,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {}, child: Text('elevatedbutton')),
-            OutlinedButton(onPressed: () {}, child: Text('outlineddbutton')),
-            TextButton(onPressed: () {}, child: Text('textbutton')),
-            GestureDetector(onTap: () {}, child: Text('gesturedetector')),
+            ElevatedButton(
+              onPressed: null,
+              style: ElevatedButton.styleFrom(
+                  disabledForegroundColor: Colors.purple.withOpacity(0.38),
+                  disabledBackgroundColor: Colors.purple.withOpacity(0.12)),
+              child: const Text(
+                'elevatedbutton',
+              ),
+            ),
+            GestureDetector(
+                onTap: () {
+                  print('gesturedetector');
+                },
+                child: Container(
+                  color: Colors.yellow,
+                  height: 100,
+                )),
           ],
         ));
   }

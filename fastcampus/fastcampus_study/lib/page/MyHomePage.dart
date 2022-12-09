@@ -8,34 +8,46 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _index = 0;
+  static const List<Widget> _widgetOption = <Widget>[
+    Text(
+      'Star',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Alarm',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Setting',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter My Appbar'),
-        ),
-        body: Wrap(
-          spacing: 10,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: null,
-              style: ElevatedButton.styleFrom(
-                  disabledForegroundColor: Colors.purple.withOpacity(0.38),
-                  disabledBackgroundColor: Colors.purple.withOpacity(0.12)),
-              child: const Text(
-                'elevatedbutton',
-              ),
-            ),
-            GestureDetector(
-                onTap: () {
-                  print('gesturedetector');
-                },
-                child: Container(
-                  color: Colors.yellow,
-                  height: 100,
-                )),
-          ],
-        ));
+      appBar: AppBar(
+        title: const Text('Flutter Appbar'),
+      ),
+      body: Column(children: [
+        Center(child: _widgetOption.elementAt(_index)),
+      ]),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _index,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'star'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.access_alarm), label: 'alarm'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'setting')
+        ],
+      ),
+    );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _index = index;
+    });
   }
 }

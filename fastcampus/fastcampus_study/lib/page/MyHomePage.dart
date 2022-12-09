@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: (context) => Page2(),
                     ));
               },
-              child: Text('Go to 2!'))
+              child: Text('Go to 2!')),
         ],
       ),
     );

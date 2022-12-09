@@ -12,7 +12,14 @@ class _Page1State extends State<Page1> {
   Widget build(BuildContext context) {
     return Center(
       child: Scaffold(
-        appBar: AppBar(title: Text('Page3 Appbar')),
+        appBar: AppBar(
+          title: const Text('Page3 Appbar'),
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.close)),
+        ),
         body: Center(
           child: Text(
             'Page3 Hello',

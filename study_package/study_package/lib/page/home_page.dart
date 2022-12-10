@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
     fToast.init(context);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),

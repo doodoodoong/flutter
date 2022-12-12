@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  showNotification();
+                  showNotification2();
                 },
                 child: const Text('notification'))
           ],

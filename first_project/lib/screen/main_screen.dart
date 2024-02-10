@@ -16,11 +16,12 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(elevation: 0),
-            child: const Text('Elevated Button'),
-          )
+          TextButton(
+              onPressed: () {
+                // Navigator.pushNamed(context, '/sub');
+                Navigator.pushNamed(context, '/sub', arguments: 'hello');
+              },
+              child: const Text('Click to Sub Screen'))
         ],
       ),
     );

@@ -8,7 +8,20 @@ class SubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text(
+            'Back',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
         title: const Text('Sub Screen'),
+        actions: const [
+          Icon(Icons.outlined_flag),
+        ],
       ),
       body: Column(
         children: [

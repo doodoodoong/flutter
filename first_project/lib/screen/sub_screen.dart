@@ -6,35 +6,47 @@ class SubScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leading: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text(
-            'Back',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        title: const Text('Sub Screen'),
-        actions: const [
-          Icon(Icons.outlined_flag),
-        ],
-      ),
-      body: Column(
-        children: [
-          Center(
-            child: Text('Sub Screen $msg'),
-          ),
-          TextButton(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            leading: TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Go to back'))
-        ],
-      ),
+              child: const Text(
+                'Back',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            title: const Text('Sub Screen'),
+            actions: const [
+              Icon(Icons.outlined_flag),
+            ],
+            bottom: const TabBar(tabs: [
+              Tab(
+                text: 'Tab 1',
+              ),
+              Tab(
+                text: 'Tab 2',
+              ),
+              Tab(
+                text: 'Tab 3',
+              ),
+            ]),
+          ),
+          body: const TabBarView(children: [
+            Center(
+              child: Text('Tab 1'),
+            ),
+            Center(
+              child: Text('Tab 2'),
+            ),
+            Center(
+              child: Text('Tab 3'),
+            )
+          ])),
     );
   }
 }

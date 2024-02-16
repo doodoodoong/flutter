@@ -24,6 +24,26 @@ class _MainScreenState extends State<MainScreen> {
               child: const Text('Click to Sub Screen'))
         ],
       ),
+      drawer: Drawer(
+          child: ListView(
+        children: [
+          const DrawerHeader(
+            child: Text('Header Section'),
+          ),
+          ListTile(
+            title: const Text('Home'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Main'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Sub'),
+            onTap: () {},
+          )
+        ],
+      )),
     );
   }
 }

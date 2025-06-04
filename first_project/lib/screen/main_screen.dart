@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           TextButton(
               onPressed: () {
-                // Navigator.pushNamed(context, '/sub');
+                // Navigate to Sub screen with an argument.
                 Navigator.pushNamed(context, '/sub', arguments: 'hello');
               },
               child: const Text('Click to Sub Screen'))

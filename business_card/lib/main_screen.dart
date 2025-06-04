@@ -159,7 +159,7 @@ class _MainScreenState extends State<MainScreen> {
                     } else {
                       if (introduceController.text.isEmpty) {
                         const snackBar = SnackBar(
-                          content: Text('Introduce input empty'),
+                          content: Text('Introduce input is empty'),
                           duration: Duration(seconds: 2),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);

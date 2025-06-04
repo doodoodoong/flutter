@@ -210,7 +210,7 @@ class _MainScreenState extends State<MainScreen> {
 
   Future<void> getIntroduceData() async {
     final sharedPref = await SharedPreferences.getInstance();
-    String introduceMsg = sharedPref.getString('introduce').toString();
-    introduceController.text = introduceMsg ?? "";
+    final introduceMsg = sharedPref.getString('introduce') ?? '';
+    introduceController.text = introduceMsg;
   }
 }
